@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NML - Frontend Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">NML</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#internships" class="nav-link">Internships</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-name">Hello, I'm <span class="highlight">Ninz</span></h1>
+                    <h2 class="hero-title">Frontend Developer</h2>
+                    <p class="hero-description">Passionate about creating beautiful, functional, and user-friendly web experiences with modern technologies.</p>
+                    <button class="resume-btn">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
+                        <p>Your Photo Here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="calculator">
+                    <div class="project-image">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="project-title">Scientific Calculator</h3>
+                </div>
+                <div class="project-card" data-project="attendance">
+                    <div class="project-image">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3 class="project-title">Student Attendance System</h3>
+                </div>
+                <div class="project-card" data-project="movie">
+                    <div class="project-image">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="project-title">Movie Website</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates</h2>
+            <div class="certificates-grid" id="certificatesGrid">
+                <div class="certificate-card" data-cert-url="https://drive.google.com/file/d/1fX56askl10S8yqWKIY8l32Tyknix82JU/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="certificate-title">Responsive Web Design</h3>
+                </div>
+                <div class="certificate-card" data-cert-url="https://drive.google.com/file/d/1Aik_KTDw1QLgzSyEMqSxqkne7JSDwGtq/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="certificate-title">Google Solution Certificate</h3>
+                </div>
+                <div class="certificate-card" data-cert-url="https://drive.google.com/file/d/1lsXVHyUgTAJz3VmBCBlxKt-dXf94Ardp/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="certificate-title">Prompt Engineering</h3>
+                </div>
+                <div class="certificate-card" data-cert-url="https://drive.google.com/file/d/1kjgeiuPg2E-qkNISc1bqMSCvPq2yRJa_/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="certificate-title">Python for Beginners</h3>
+                </div>
+                <div class="certificate-card" data-cert-url="https://drive.google.com/file/d/1QtkNY3e-ha-XKukFpt61ClWBG4hUZLcX/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="certificate-title">Applied Generative AI</h3>
+                </div>
+                <div class="certificate-card" data-cert-url="https://drive.google.com/file/d/1FP8N1mBHdB_pgqlKFk-mjyheScz7mLCT/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="certificate-title">Data Analysis with Python</h3>
+                </div>
+                <div class="certificate-card hidden" data-cert-url="https://drive.google.com/file/d/1kmLH2KKn-UER9dYtVjPZ9-yhoS2-Ts74/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fas fa-analytics"></i>
+                    </div>
+                    <h3 class="certificate-title">Introduction to Data Analytics</h3>
+                </div>
+                <div class="certificate-card hidden" data-cert-url="https://drive.google.com/file/d/1kng54dqj2MxgFXUj-BFm-kvY9pQGwI0Y/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3 class="certificate-title">Excel Basics for Data Analysis</h3>
+                </div>
+                <div class="certificate-card hidden" data-cert-url="https://drive.google.com/file/d/1qw97G6k5sE78H-GvG-TPj-gt4aEOYL36/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="certificate-title">AI Chatbots with LLMs</h3>
+                </div>
+                <div class="certificate-card hidden" data-cert-url="https://drive.google.com/file/d/1I4uvLXVo7tlpdB3PARJQR2vWVo9VVrg0/view?usp=sharing">
+                    <div class="certificate-image">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3 class="certificate-title">PHP and MySQL</h3>
+                </div>
+            </div>
+            <button class="show-more-btn" id="showMoreBtn">
+                Show More <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Internships Section -->
+    <section id="internships" class="internships">
+        <div class="container">
+            <h2 class="section-title">Internship Experience</h2>
+            <div class="internships-timeline">
+                <div class="internship-item">
+                    <div class="internship-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="internship-content">
+                        <h3>Rijesh Chirathilattu & Associates</h3>
+                        <h4>Intern</h4>
+                        <p>Gained hands-on experience in working with Tally ERP for accounting and business operations. Developed skills in data entry.</p>
+                        <div class="internship-skills">
+                            <span class="skill-tag">Tally ERP</span>
+                            <span class="skill-tag">Accounting</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="internship-item">
+                    <div class="internship-icon">
+                        <i class="fab fa-angular"></i>
+                    </div>
+                    <div class="internship-content">
+                        <h3>NeST Digital</h3>
+                        <h4>Intern</h4>
+                        <p>Worked on modern web applications using Angular framework, and worked on various projects. Enhanced skills in TypeScript, component-based architecture, and responsive web design.</p>
+                        <div class="internship-skills">
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Web Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h4>HTML5</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h4>CSS3</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h4>JavaScript</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-angular"></i>
+                    </div>
+                    <h4>Angular</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h4>Python</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h4>Java</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4>MySQL</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-bootstrap"></i>
+                    </div>
+                    <h4>Bootstrap</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h4>PHP</h4>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h4>Excel</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-cards">
+                <div class="education-card">
+                    <div class="education-header">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-level">Undergraduate</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>Bachelor of Commerce (B.Com)</h3>
+                        <h4>SaintGits College of Applied Sciences</h4>
+                        <p>Developed strong analytical and business skills with focus on commerce, accounting, and business management principles.</p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-header">
+                        <div class="education-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="education-level">Postgraduate</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>Master of Computer Applications (MCA)</h3>
+                        <h4>Saintgits College of Engineering</h4>
+                        <p>Advanced computer science education focusing on software development, programming languages, and modern web technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">Let's connect and discuss opportunities to work together!</p>
+            <div class="social-links">
+                <a href="" class="social-link linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="" class="social-link github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="social-link discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="" class="social-link email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <div class="project-image-placeholder">
+                        <i class="modal-icon"></i>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h3 class="modal-title"></h3>
+                    <p class="modal-description"></p>
+                    <div class="modal-tools">
+                        <h4>Tools Used:</h4>
+                        <div class="tools-list"></div>
+                    </div>
+                    <div class="modal-buttons">
+                        <button class="modal-btn view-code">
+                            <i class="fas fa-code"></i> View Code
+                        </button>
+                        <button class="modal-btn view-project">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Certificate Modal -->
+<div id="certificateModal" class="modal certificate-modal">
+    <div class="certificate-modal-content">
+        <span class="close">&times;</span>
+        <div class="certificate-display">
+            <iframe id="modalCertificateIframe" src="" frameborder="0" width="100%" height="500px" allow="autoplay"></iframe>
+        </div>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
