@@ -14,31 +14,46 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Project data
+// Resume download functionality
+document.querySelector('.resume-btn').addEventListener('click', function() {
+    const googleDriveFileId = '10OYCd71A2PDE-J3XdA_6gp6VjNmEd682';
+    const googleDriveDownloadUrl = `https://drive.google.com/uc?export=download&id=${googleDriveFileId}`;
+
+    const resumeUrl = googleDriveDownloadUrl;
+    
+    //temporary link and trigger download
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Ninz_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
 const projectData = {
     calculator: {
-        title: 'Scientific Calculator',
-        description: 'A comprehensive scientific calculator built with Python using Tkinter for the GUI. Features advanced mathematical functions including trigonometric operations, logarithms, exponentials, and complex calculations. The calculator provides a user-friendly interface with button layouts similar to professional scientific calculators.',
-        tools: ['Python', 'Tkinter', 'Math Library'],
-        icon: 'fas fa-calculator'
+        title: "Scientific Calculator",
+        description: "This is a desktop application built with Python's Tkinter for the GUI and the math library for advanced functions. It supports both basic arithmetic and scientific operations like trigonometry, logarithms, powers, and factorials. The interface is simple and user-friendly, resembling a real calculator for quick and accurate computations.",
+        icon: "fas fa-calculator",
+        tools: ["Tkinter","Math"],
+        codeUrl: "https://github.com/ninz2002/Scientific_Calculator", 
+        projectUrl: ""
     },
     attendance: {
-        title: 'Student Attendance Management System',
-        description: 'A comprehensive web-based attendance management system built with Java and styled with Tailwind CSS. The system features three distinct user roles: Admin (can add/remove staff and students, view all attendance records), Staff (can mark attendance for their assigned subjects), and Students (can view their personal attendance records). Features a user-friendly interface with role-based access control.',
-        tools: ['Java', 'Tailwind CSS', 'HTML', 'CSS'],
-        icon: 'fas fa-user-check'
+        title: "Student Attendance System", 
+        description: "This Java-based system manages student attendance through role-based access for admin, teachers, and students. Admins handle accounts, teachers record and manage attendance, and students can view their records. It ensures accuracy, security, and efficiency compared to manual methods, making attendance tracking more reliable. ",
+        icon: "fas fa-user-check",
+        tools: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        codeUrl: "https://github.com/ninz2002/Student_attendance_system",
+        projectUrl: ""
     },
     movie: {
-        title: 'Movie Website',
-        description: 'A dynamic movie database website built with Angular and TypeScript, styled with Bootstrap. The platform showcases movies, TV series, and top-rated content with detailed information including posters, ratings, director names, genres, and descriptions. Features movie detail pages with trailer and watch options (UI only). A complete clone of popular movie streaming platforms with responsive design.',
-        tools: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Bootstrap'],
-        icon: 'fas fa-film'
-    },
-    todo: {
-        title: 'To-Do App',
-        description: 'A simple yet functional task management application built with vanilla JavaScript, HTML, and CSS. Features include adding new tasks, marking tasks as complete, deleting tasks, and local storage persistence. The app provides a clean, intuitive interface for daily task management with responsive design for mobile and desktop use.',
-        tools: ['JavaScript', 'HTML', 'CSS'],
-        icon: 'fas fa-tasks'
+        title: "Movie Website",
+        description: "A responsive movie database website with search functionality, detailed movie information, ratings, and user reviews. It uses the TMDB API for real-time data and features a modern design with Angular.",
+        icon: "fas fa-film", 
+        tools: ["Angular","TypeScript", "API Integration"],
+        codeUrl: "https://github.com/ninz2002/movies",
+        projectUrl: "https://ninz2002.github.io/movies/"
     }
 };
 
@@ -47,12 +62,16 @@ const projectModal = document.getElementById('projectModal');
 const projectCards = document.querySelectorAll('.project-card');
 const closeBtn = document.querySelector('.close');
 
+let currentProject = null;
+
 projectCards.forEach(card => {
     card.addEventListener('click', function() {
         const projectKey = this.getAttribute('data-project');
         const project = projectData[projectKey];
         
         if (project) {
+            currentProject = project;
+            
             // Update modal content
             document.querySelector('.modal-title').textContent = project.title;
             document.querySelector('.modal-description').textContent = project.description;
@@ -68,6 +87,18 @@ projectCards.forEach(card => {
                 toolsList.appendChild(toolTag);
             });
             
+            // Enable/disable View Project button based on projectUrl
+            const viewProjectBtn = document.querySelector('.view-project');
+            if (project.projectUrl && project.projectUrl.trim() !== '') {
+                viewProjectBtn.disabled = false;
+                viewProjectBtn.style.opacity = '1';
+                viewProjectBtn.style.cursor = 'pointer';
+            } else {
+                viewProjectBtn.disabled = true;
+                viewProjectBtn.style.opacity = '0.5';
+                viewProjectBtn.style.cursor = 'not-allowed';
+            }
+            
             // Show modal
             projectModal.style.display = 'block';
             document.body.style.overflow = 'hidden';
@@ -75,10 +106,33 @@ projectCards.forEach(card => {
     });
 });
 
+// View Code button - opens in new tab
+document.querySelector('.view-code').addEventListener('click', function() {
+    if (currentProject && currentProject.codeUrl) {
+        window.open(currentProject.codeUrl, '_blank');
+    }
+});
+
+// View Project button - opens full screen in new tab
+document.querySelector('.view-project').addEventListener('click', function() {
+    if (currentProject && currentProject.projectUrl && currentProject.projectUrl.trim() !== '') {
+        // Close the current modal
+        projectModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        
+        // Open project in full screen new tab
+        window.open(currentProject.projectUrl, '_blank');
+        
+        // Reset current project
+        currentProject = null;
+    }
+});
+
 // Close modal functionality
 closeBtn.addEventListener('click', function() {
     projectModal.style.display = 'none';
     document.body.style.overflow = 'auto';
+    currentProject = null;
 });
 
 // Close modal when clicking outside
@@ -86,6 +140,7 @@ window.addEventListener('click', function(e) {
     if (e.target === projectModal) {
         projectModal.style.display = 'none';
         document.body.style.overflow = 'auto';
+        currentProject = null;
     }
 });
 
@@ -226,18 +281,4 @@ document.querySelectorAll('.project-card, .certificate-card, .skill-item, .educa
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
-});
-
-// Resume download functionality (placeholder)
-document.querySelector('.resume-btn').addEventListener('click', function() {
-    alert('Resume download will be implemented with your actual resume file.');
-});
-
-// Modal buttons functionality (placeholder)
-document.querySelector('.view-code').addEventListener('click', function() {
-    alert('This will redirect to your project\'s code repository.');
-});
-
-document.querySelector('.view-project').addEventListener('click', function() {
-    alert('This will redirect to your live project.');
 });
